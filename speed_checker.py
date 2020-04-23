@@ -1,19 +1,17 @@
 def check_speed():
     speed_limit = int(70)
     points = 0
-    while points <= 12:
-        speed = int(input("Enter driver's speed: "))
-        if speed > speed_limit:
-            over_speed = speed - speed_limit
-            count = int(over_speed / 5)
-            points += count
-            print(f"Points: {points}")
-            break
+    speed = int(input("Enter driver's speed: "))
+    if speed > speed_limit:
+        over_speed = speed - speed_limit
+        count = int(over_speed / 5)
+        points += count
+        if points > 12:
+            print(f"Points: {points} \nLicense suspended!")
         else:
-            print('Speed is OK!')
-            break
+            print(f"You have exceeded speed limit. \nPoints: {points}")
     else:
-        print("License suspended!")
+        print('Speed is OK!')
 
 
 check_speed()
